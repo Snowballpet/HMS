@@ -1,0 +1,25 @@
+{% extends 'hospital/homebase.html' %}
+
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="jumbotron" style="margin-bottom:0px;">
+  <h1 class="display-4" style="text-align:center; text-decoration:wavy;">Hello... Patient</h1>
+  <p class="lead">Welcome to Hospital Management System.</p>
+  <hr class="my-4">
+  
+  <p style = 'font-size: 24px;'>If you are new to this , you can select the register</p>
+  <p style = "font-size: 24px">If you are already a registered patient then you know what to use (login)</p>
+  <p>To explore more click the button below</p>
+  <img src="static\images\down.gif" alt="" style= "display:block; margin-left:auto; margin-right:auto;width:50%;">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/patientsignup" role="button">Register Your Account</a>
+    <a class="btn btn-primary btn-lg" href="/patientlogin" role="button">Login</a>
+  </p>
+</div>
+<!--done-->
+
+{% endblock content %}

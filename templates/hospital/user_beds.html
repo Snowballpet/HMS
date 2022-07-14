@@ -1,0 +1,135 @@
+{% extends 'hospital/homebase.html' %}
+{% block content %}
+
+{% load widget_tweaks %}
+<html>
+
+<head>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCC Hospital</title>
+    <style media="screen">
+
+.course{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+  }
+  h1{
+      font-size: 36px;
+      font-weight: 600;
+  }
+
+  p{
+      color: #777;
+      font-size: 30px;
+      font-weight: 500px;
+      line-height: 22px;
+      padding: 10px;
+  }
+  .row{
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 100px;
+      margin-left: 100px;
+
+  }
+  .course-col{
+      flex-basis: 41%;
+      background: #45e2da;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+  }
+
+  h3{
+      text-align: center;
+      font-weight: 600;
+      margin: 10px 0;
+  }
+  .course-col:hover{
+      box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+  }
+  
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+  }
+
+
+
+
+        a:link {
+          text-decoration: none;
+        }
+    
+        h6 {
+          text-align: center;
+        }
+    
+        .row {
+          margin: 80px;
+        }
+      </style>
+</head>
+
+
+<body>
+        <section class="course" id='ci'>
+        <h1 style="text-align: center;">Availability of beds and doctors</h1>
+        
+        <div class="row">
+          <div class="course-col">
+            <h3>Total beds</h3>
+            <p>{{ bedscount }}</p>
+      
+          </div>
+          <div class="course-col">
+            <h3>Availablility</h3>
+            <p>{{ availablebeds }}</p>
+      
+          </div>
+      
+        </div>
+      </section>
+    
+   
+
+    <div class="container">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h6 class="panel-title">Department & Doctors</h6>
+          </div>
+          <table class="table table-hover" id="dev-table">
+            <thead>
+              <tr>
+                <th>Department</th>
+                <th>Doctor Name</th>
+                <th>Mobile</th>
+              </tr>
+            </thead>
+            {% for d in doctors %}
+            <tr>
+              <td>{{d.department}}</td>
+              <td> {{d.get_name}}</td>
+              <td>{{d.mobile}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      
+   
+    </body>
+    {% endblock content %}
+    </html>

@@ -1,0 +1,311 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<head>
+ 
+  <style media="screen">
+
+
+  /*--info--*/
+  .course{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+  }
+  h1{
+      font-size: 36px;
+      font-weight: 600;
+  }
+
+  p{
+      color: #777;
+      font-size: 14px;
+      font-weight: 300px;
+      line-height: 22px;
+      padding: 10px;
+  }
+  .row{
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      margin-right: 1px;
+      margin-left: 1px;
+
+  }
+  .course-col{
+      flex-basis: 31%;
+      background: #fff3f3;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+  }
+
+  h3{
+      text-align: center;
+      font-weight: 600;
+      margin: 10px 0;
+  }
+  .course-col:hover{
+      box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+  }
+  
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+  }
+
+/*---- testimonials -----*/
+
+.testimonials{
+     width: 80%;
+     margin: auto;
+     padding-top: 100px;
+     text-align: center;
+ }
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonial-col p{
+    padding: 0;
+
+}
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.testimonial-col .fa{
+    color: #f44336;
+
+}
+@media(max-width: 700px){
+    .testimonial-col img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+}
+
+
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images\bg1.jpg" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+    }
+
+
+    .alert {
+      margin: 0px;
+    }
+
+    /*----*/
+    .campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+
+}
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(226,0,0,0.7);
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+
+
+
+
+    .glow {
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
+    }
+  </style>
+</head>
+<br>
+<br>
+
+<div class="jumbotron" style="margin-bottom: 0px;margin-top: 0px;">
+  <br>
+  <h5 class="display-3 glow">You are our first priority ❤ </h5>
+  <br><br><br><br><br>
+  <p>
+  <h3>To know to about available beds and doctors information</h3>
+
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" style = "font-size: larger;" href="/user-beds" role="button">Information </a>
+  </p>
+  <br><br>
+</div>
+
+
+<!--Information-->
+<section class="course" id='ci'>
+  <h1 style="text-align: center;">Hospital information</h1>
+  <p>We care for you</p>
+  <div class="row">
+    <div class="course-col">
+      <h3>24/7 Available</h3>
+      <p>Always there for you</p>
+
+    </div>
+    <div class="course-col">
+      <h3>Ambulance</h3>
+      <p>Service available for all</p>
+
+    </div>
+    <div class="course-col">
+      <h3>Emergency room services</h3>
+      <p>Solution for crisis situations</p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!--Achievements-->
+<section class="campus" id="ach">
+  <h1 style="text-align: center;">Achievements</h1>
+  <p>Achievements from our hospital...thank you doctors</p>
+  <br>
+
+  <div class="row">
+    <div class="campus-col">
+      <img src="static\images\1st.jpg">
+      <div class="layer">
+        <h3>1st in AP</h3>
+
+      </div>
+
+    </div>
+    <div class="campus-col">
+      <img src="static\images\3rd.jpg">
+      <div class="layer">
+        <h3>3 in India</h3>
+
+      </div>
+
+    </div>
+    <div class="campus-col">
+      <img src="static\images\rec.jpg">
+      <div class="layer">
+        <h3>Recognised internationally</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+    <!---Members------>
+    <section class="testimonials" id ="mem">
+      <h1>Expercience shared by our patients</h1>
+        <div class="row">
+
+        <div class="testimonial-col">
+          <img src="static\images\user1.jfif">
+          <div>
+            <p style="font-weight: 500;">I was once admitted here for a leg injury and staff took good care of me. So, I would like to say that this hospital has the best service</p>
+            <h3>Thomas</h3>
+
+          </div>
+
+        </div>
+        <div class="testimonial-col">
+          <img src="static\images\user2.png">
+          <div>
+            <p style="font-weight: 500;">I am presently staying in the hospital and the doctors are highly proffesional , I would like to recommend this hospital.</p>
+            <h3>Samuel</h3>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+<br><br><br><br>
+</section>
+<h1 style="text-align: center;">Login / Register to join our hospital</h1>
+<br><br><br>
+{% include "hospital/admin_doctor_patient_card.html" %}
+<br><br><br>
+
+
+{% endblock content %}
